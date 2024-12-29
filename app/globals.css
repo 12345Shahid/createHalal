@@ -1,0 +1,75 @@
+/* globals.css */
+/* Global styles for CreateHalal. */
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #ffffff; /* Default light background */
+  color: #333333; /* Default text color */
+  margin: 0;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #121212; /* Dark mode background */
+  color: #ffffff; /* Dark mode text color */
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Link styles */
+a {
+  color: #38b000; /* Green for links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button styles */
+button {
+  background-color: #38b000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2e8b00; /* Darker green */
+}
+
+/* Header and footer styles */
+header,
+footer {
+  background-color: #f8f9fa;
+  color: #333333;
+  padding: 1rem 0;
+}
