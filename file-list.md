@@ -893,5 +893,73 @@ Maintain a configurable list of prohibited words or phrases.
 4. Saved. There should be an option in the menu and also after anyone generates any content from the tools he should see this option and it is called saved( at the menu) or save ( at the tool/chatbot interface) . He should be able to save the work or the content he generated and he should be able to create folders and files under these folders and he will also be able to create file without any folder and it is like a standard file manager or I should say not complex but yeah it's like a normal file manager. I also want a search engine there, which will help the user to search among the files and folders. There should be also filters in the search engine. In case he will use the filter to search only folders or to search only files across the whole file manager functionality ( Suppose someone searched for SS. And if he uses a filter to only see the files then he should see the file SS which is under a folder and he will also see any file which is close to his search keyword even if it is not under any folder. )  And user should be able to download a file or a folder separately. and if he wants to download all the files and folders then he will have an option in the dashboard called Export to CSV and if he downloads files separately as a file then he will have several options like PDF or PPT.
 
 
+These were the information about the project and below are the list of all the necessary files divided into different batches 
+
+
+
+# Frontend Batches
+
+## Batch 1: Core Layout and Navigation
+Description: Essential layout components and navigation structure
+- `/app/layout.tsx` - Root layout with providers
+- `/app/page.tsx` - Homepage
+- `/components/layout/header.tsx` - Main header with navigation
+- `/components/layout/footer.tsx` - Site footer
+- `/components/ui/navigation-menu.tsx` - Navigation menu component
+- `/components/ui/theme-toggle.tsx` - Dark/light mode toggle
+- `/lib/utils.ts` - Utility functions
+- `/styles/globals.css` - Global styles
+- `/config/site.ts` - Site configuration
+- `/types/index.d.ts` - TypeScript definitions
+- `/public/logo.svg` - Site logo
+
+## Batch 2: Authentication & User Management
+Description: Authentication flows and user profile management
+- `/app/(auth)/login/page.tsx` - Login page
+- `/app/(auth)/signup/page.tsx` - Signup page
+- `/app/(auth)/forgot-password/page.tsx` - Password reset
+- `/components/auth/login-form.tsx` - Login form component
+- `/components/auth/signup-form.tsx` - Signup form component
+- `/components/auth/auth-form.tsx` - Shared auth form components
+- `/lib/auth.ts` - Authentication utilities
+- `/hooks/use-auth.tsx` - Authentication hook
+- `/components/ui/form.tsx` - Form components
+- `/components/ui/input.tsx` - Input components
+- `/components/ui/button.tsx` - Button components
+
+## Batch 3: Dashboard & Analytics
+Description: User dashboard and analytics components
+- `/app/(dashboard)/dashboard/page.tsx` - Main dashboard
+- `/components/dashboard/credits-display.tsx` - Credits section
+- `/components/dashboard/referral-stats.tsx` - Referral tracking
+- `/components/dashboard/ad-credits.tsx` - Ad-based credits
+- `/components/dashboard/activity-log.tsx` - Recent activity
+- `/components/dashboard/stats-card.tsx` - Stats card component
+- `/components/ui/card.tsx` - Card component
+- `/components/ui/data-table.tsx` - Data table component
+- `/hooks/use-dashboard.tsx` - Dashboard data hook
+- `/lib/dashboard.ts` - Dashboard utilities
+- `/types/dashboard.d.ts` - Dashboard types
+
+## Batch 4: Tool Interface Components
+Description: Core components for tool interfaces
+- `/components/tools/tool-interface.tsx` - Base tool interface
+- `/components/tools/input-form.tsx` - Tool input form
+- `/components/tools/output-display.tsx` - Tool output display
+- `/components/tools/tone-selector.tsx` - Tone selection
+- `/components/tools/word-range-input.tsx` - Word range input
+- `/components/tools/negative-prompt.tsx` - Negative prompt input
+- `/components/tools/save-options.tsx` - Save functionality
+- `/components/tools/history-viewer.tsx` - History component
+- `/components/ui/dropdown.tsx` - Dropdown component
+- `/components/ui/textarea.tsx` - Textarea component
+- `/hooks/use-tool.tsx` - Tool interaction hook
+
+## Batch 5: Blog Tools Category
+Description: Blog tool implementations
+
+[ actually I don't have the file names for this batch but all the files which are not included into any other batches are inside this batch ]
+
+
 These were the information. Now I have divided the project files into several batches. And I have already created five batches. below are the names of the files which are already created but you will find the file content in the repository.
 
