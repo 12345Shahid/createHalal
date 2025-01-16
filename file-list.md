@@ -11,6 +11,7 @@ CreateHalal is an AI-powered content creation platform built on Islamic principl
 - **Blog Tools**: 35 specialized tools including Quick Blog Generator, SEO Helper, Grammar Checker
 - **Writing Assistant Tools**: 30 tools focusing on grammar, style, and content enhancement
 - **YouTube Tools**: 20 tools for video content creation and optimization
+- [there will be more tool categories and I will give you them in the comprehensive description which is written below the short description]
 - **Upcoming Features**: Image/social media tools, programming tools, video/audio tools, e-commerce tools
 
 ### User Interface
