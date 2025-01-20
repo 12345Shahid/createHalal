@@ -4,6 +4,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { auth } from '@/lib/tools/blog/auth/firebase-config';
+import { getFirestore } from 'firebase-admin/firestore';
 
 interface UserPreferences {
   theme: 'light' | 'dark';
@@ -18,6 +19,15 @@ interface UserPreferences {
   timezone: string;
 }
 
+// Add input validation
+const validatePreferences = (prefs: Partial<UserPreferences>): boolean => {
+  if (prefs.theme && !['light', 'dark'].includes(prefs.theme)) return false;
+  if (prefs.fontSize && (prefs.fontSize < 8 || prefs.fontSize > 32)) return false;
+  if (prefs.displayDensity && !['comfortable', 'compact'].includes(prefs.displayDensity)) return false;
+  if (prefs.toolbarPosition && !['top', 'side'].includes(prefs.toolbarPosition)) return false;
+  return true;
+};
+
 export async function POST(req: NextRequest) {
   try {
     const authHeader = req.headers.get('authorization');
@@ -31,12 +41,31 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const preferences: Partial<UserPreferences> = body;
 
-    const userId = await auth.verifyIdToken(authHeader.split('Bearer ')[1]);
-    
-    const updatedPreferences = await saveUserPreferences(userId.uid, preferences);
+    // Add validation
+    if (!validatePreferences(preferences)) {
+      return NextResponse.json(
+        { error: 'Invalid preferences format' },
+        { status: 400 }
+      );
+    }
+
+    // Add error handling for token verification
+    let userId;
+    try {
+      const decodedToken = await auth.verifyIdToken(authHeader.split('Bearer ')[1]);
+      userId = decodedToken.uid;
+    } catch (error) {
+      return NextResponse.json(
+        { error: 'Invalid authentication token' },
+        { status: 401 }
+      );
+    }
+
+    const updatedPreferences = await saveUserPreferences(userId, preferences);
 
     return NextResponse.json(updatedPreferences);
   } catch (error) {
+    console.error('Preference save error:', error);
     return NextResponse.json(
       { error: 'Failed to save preferences' },
       { status: 500 }
@@ -45,18 +74,32 @@ export async function POST(req: NextRequest) {
 }
 
 async function saveUserPreferences(userId: string, preferences: Partial<UserPreferences>): Promise<UserPreferences> {
-  // Implementation will be done in the backend
-  return {
-    theme: 'light',
+  const db = getFirestore();
+  const userPrefsRef = db.collection('userPreferences').doc(userId);
+  
+  // Get existing preferences
+  const doc = await userPrefsRef.get();
+  const existingPrefs = doc.exists ? doc.data() as UserPreferences : {
+    theme: 'light' as const,
     language: 'en',
-    defaultExportFormat: 'txt',
+    defaultExportFormat: 'txt' as const,
     emailNotifications: true,
     autoSave: true,
-    displayDensity: 'comfortable',
-    toolbarPosition: 'top',
+    displayDensity: 'comfortable' as const,
+    toolbarPosition: 'top' as const,
     fontSize: 14,
     dateFormat: 'YYYY-MM-DD',
     timezone: 'UTC',
-    ...preferences
   };
+
+  // Merge new preferences with existing ones
+  const updatedPrefs = {
+    ...existingPrefs,
+    ...preferences
+  } as UserPreferences;
+
+  // Save to Firestore
+  await userPrefsRef.set(updatedPrefs);
+
+  return updatedPrefs;
 }

@@ -43,8 +43,9 @@ export async function DELETE(req: NextRequest) {
 }
 
 async function deleteUserFiles(userId: string, fileIds: string[]): Promise<number> {
-  // Implementation will be done in the backend
-  return 0;
+  // Implement file deletion logic here
+  // This is a mock implementation, replace with actual logic
+  return fileIds.length;
 }
 
 // Bulk delete handler
@@ -79,6 +80,7 @@ export async function POST(req: NextRequest) {
 }
 
 async function bulkDeleteUserFiles(userId: string, query: string, type?: string): Promise<number> {
-  // Implementation will be done in the backend
+  // Implement bulk file deletion logic here
+  // This is a mock implementation, replace with actual logic
   return 0;
 }

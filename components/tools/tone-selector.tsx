@@ -1,31 +1,42 @@
 // File: /components/tools/tone-selector.tsx
-"use client"
+// Component for selecting the tone of the generated content
 
-import { Label } from "../ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/dropdown"
+import { FormField, FormItem, FormLabel } from "@/components/ui/form"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useFormContext } from "react-hook-form"
+
+const tones = [
+  { value: "professional", label: "Professional" },
+  { value: "casual", label: "Casual" },
+  { value: "friendly", label: "Friendly" },
+  { value: "formal", label: "Formal" },
+  { value: "enthusiastic", label: "Enthusiastic" },
+] as const
 
 export function ToneSelector() {
+  const form = useFormContext()
+
   return (
-    <div className="space-y-2">
-      <Label>Tone of Voice</Label>
-      <Select>
-        <SelectTrigger>
-          <SelectValue placeholder="Select tone" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="professional">Professional</SelectItem>
-          <SelectItem value="friendly">Friendly</SelectItem>
-          <SelectItem value="casual">Casual</SelectItem>
-          <SelectItem value="formal">Formal</SelectItem>
-          <SelectItem value="persuasive">Persuasive</SelectItem>
-        </SelectContent>
-      </Select>
-    </div>
+    <FormField
+      control={form.control}
+      name="tone"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Tone</FormLabel>
+          <Select onValueChange={field.onChange} defaultValue={field.value}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select a tone" />
+            </SelectTrigger>
+            <SelectContent>
+              {tones.map((tone) => (
+                <SelectItem key={tone.value} value={tone.value}>
+                  {tone.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </FormItem>
+      )}
+    />
   )
 }
