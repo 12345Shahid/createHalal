@@ -1,4 +1,9 @@
 // File: /components/tools/output-display.tsx
+// Component for displaying tool output with loading state
+
+import { Card, CardContent } from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
+
 interface OutputDisplayProps {
   content: string
   loading: boolean
@@ -7,23 +12,27 @@ interface OutputDisplayProps {
 export function OutputDisplay({ content, loading }: OutputDisplayProps) {
   if (loading) {
     return (
-      <div className="border rounded-lg p-4 min-h-[200px] flex items-center justify-center">
-        <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full" />
-      </div>
+      <Card>
+        <CardContent className="p-6">
+          <Skeleton className="h-[200px] w-full" />
+        </CardContent>
+      </Card>
+    )
+  }
+
+  if (!content) {
+    return (
+      <Card>
+        <CardContent className="p-6 text-center text-muted-foreground">
+          Output will appear here
+        </CardContent>
+      </Card>
     )
   }
 
   return (
-    <div className="border rounded-lg p-4 min-h-[200px]">
-      {content ? (
-        <div className="prose max-w-none">
-          {content}
-        </div>
-      ) : (
-        <div className="text-center text-muted-foreground">
-          Your generated content will appear here
-        </div>
-      )}
-    </div>
+    <Card>
+      <CardContent className="p-6 whitespace-pre-wrap">{content}</CardContent>
+    </Card>
   )
 }

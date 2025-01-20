@@ -1,24 +1,27 @@
 // File: /components/tools/input-form.tsx
-"use client"
+// Tool input form component for collecting user input
 
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { Textarea } from "../ui/textarea"
-import { Button } from "../ui/button"
-import { Form, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
+import { Button } from "@/components/ui/button"
+import { Form, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Textarea } from "@/components/ui/textarea"
 
 const formSchema = z.object({
-  prompt: z.string().min(1, "Please enter a prompt"),
+  content: z.string().min(1, "Please enter some content"),
 })
 
 interface InputFormProps {
-  onSubmit: (values: z.infer<typeof formSchema>) => Promise<void>
+  onSubmit: (data: z.infer<typeof formSchema>) => void
 }
 
 export function InputForm({ onSubmit }: InputFormProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      content: "",
+    },
   })
 
   return (
@@ -26,12 +29,12 @@ export function InputForm({ onSubmit }: InputFormProps) {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
-          name="prompt"
+          name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>What would you like to create?</FormLabel>
+              <FormLabel>Content</FormLabel>
               <Textarea
-                placeholder="Enter your prompt here..."
+                placeholder="Enter your content here..."
                 className="min-h-[200px]"
                 {...field}
               />
@@ -39,9 +42,7 @@ export function InputForm({ onSubmit }: InputFormProps) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">
-          Generate
-        </Button>
+        <Button type="submit">Process</Button>
       </form>
     </Form>
   )

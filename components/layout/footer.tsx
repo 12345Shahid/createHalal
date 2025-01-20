@@ -2,41 +2,28 @@
 import Link from 'next/link'
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="border-t">
-      <div className="container py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li><Link href="/tools">Tools</Link></li>
-              <li><Link href="/pricing">Pricing</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li><Link href="/terms">Terms</Link></li>
-              <li><Link href="/privacy">Privacy</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Help</h3>
-            <ul className="space-y-2">
-              <li><Link href="/help">Documentation</Link></li>
-              <li><Link href="/support">Support</Link></li>
-            </ul>
-          </div>
+    <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 md:flex md:items-center md:justify-between">
+        <div className="text-center md:text-left">
+          <p className="text-sm text-gray-500">
+            © {currentYear} Your Blog Dashboard. All rights reserved.
+          </p>
         </div>
-        <div className="mt-8 pt-8 border-t text-center">
-          <p>&copy; {new Date().getFullYear()} CreateHalal. All rights reserved.</p>
+        <div className="mt-4 md:mt-0">
+          <div className="flex justify-center md:justify-end space-x-6">
+            <a href="#" className="text-gray-400 hover:text-gray-500">
+              Terms
+            </a>
+            <a href="#" className="text-gray-400 hover:text-gray-500">
+              Privacy
+            </a>
+            <a href="#" className="text-gray-400 hover:text-gray-500">
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </footer>

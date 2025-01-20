@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
     }
 
     const userId = await auth.verifyIdToken(authHeader.split('Bearer ')[1]);
-    
+
     const url = new URL(req.url);
     const params: FileListParams = {
       page: parseInt(url.searchParams.get('page') || '1'),
@@ -51,9 +51,13 @@ export async function GET(req: NextRequest) {
 }
 
 async function listUserFiles(userId: string, params: FileListParams) {
-  // Implementation will be done in the backend
+  // Implement file listing logic here
+  // This is a mock implementation, replace with actual logic
   return {
-    files: [],
-    total: 0
+    files: [
+      { id: 'file1', name: 'File 1', date: '2025-01-01', size: 1234 },
+      { id: 'file2', name: 'File 2', date: '2025-01-02', size: 5678 },
+    ],
+    total: 2
   };
 }

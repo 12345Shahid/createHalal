@@ -962,5 +962,5 @@ Description: Blog tool implementations
 [ actually I don't have the file names for this batch but all the files which are not included into any other batches are inside this batch ]
 
 
-These were the information. Now I have divided the project files into several batches. And I have already created five batches. below are the names of the files which are already created but you will find the file content in the repository.
+
 

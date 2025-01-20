@@ -1,17 +1,30 @@
 // File: /components/tools/negative-prompt.tsx
-"use client"
+// Component for specifying what to avoid in the generated content
 
-import { Label } from "../ui/label"
-import { Textarea } from "../ui/textarea"
+import { FormField, FormItem, FormLabel, FormDescription } from "@/components/ui/form"
+import { Textarea } from "@/components/ui/textarea"
+import { useFormContext } from "react-hook-form"
 
 export function NegativePrompt() {
+  const form = useFormContext()
+
   return (
-    <div className="space-y-2">
-      <Label>Avoid Including (Optional)</Label>
-      <Textarea
-        placeholder="Enter topics or phrases to avoid..."
-        className="min-h-[100px]"
-      />
-    </div>
+    <FormField
+      control={form.control}
+      name="negativePrompt"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Negative Prompt</FormLabel>
+          <FormDescription>
+            Specify what you want to avoid in the generated content
+          </FormDescription>
+          <Textarea
+            placeholder="Enter things to avoid..."
+            className="min-h-[100px]"
+            {...field}
+          />
+        </FormItem>
+      )}
+    />
   )
 }

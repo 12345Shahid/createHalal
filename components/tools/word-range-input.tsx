@@ -1,28 +1,47 @@
 // File: /components/tools/word-range-input.tsx
-"use client"
+// Component for specifying the target word count range
 
-import { Label } from "../ui/label"
-import { Input } from "../ui/input"
+import { FormField, FormItem, FormLabel } from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { useFormContext } from "react-hook-form"
 
 export function WordRangeInput() {
+  const form = useFormContext()
+
   return (
-    <div className="space-y-2">
-      <Label>Word Range</Label>
-      <div className="flex items-center space-x-2">
-        <Input
-          type="number"
-          placeholder="Min"
-          className="w-24"
-          min={1}
-        />
-        <span>to</span>
-        <Input
-          type="number"
-          placeholder="Max"
-          className="w-24"
-          min={1}
-        />
-      </div>
+    <div className="space-y-4">
+      <FormField
+        control={form.control}
+        name="wordRange.min"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Minimum Words</FormLabel>
+            <Input
+              type="number"
+              placeholder="Enter minimum word count"
+              min={0}
+              {...field}
+              onChange={(e) => field.onChange(Number(e.target.value))}
+            />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="wordRange.max"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Maximum Words</FormLabel>
+            <Input
+              type="number"
+              placeholder="Enter maximum word count"
+              min={0}
+              {...field}
+              onChange={(e) => field.onChange(Number(e.target.value))}
+            />
+          </FormItem>
+        )}
+      />
     </div>
   )
 }

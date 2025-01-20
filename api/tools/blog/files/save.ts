@@ -12,14 +12,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
-    );
+      );
     }
 
     const body = await req.json();
     const { content, fileName, type } = body;
 
     const userId = await auth.verifyIdToken(authHeader.split('Bearer ')[1]);
-    
+
     const fileData = await saveFile(userId.uid, content, fileName, type);
 
     return NextResponse.json({ file: fileData });
@@ -33,5 +33,6 @@ export async function POST(req: NextRequest) {
 
 async function saveFile(userId: string, content: string, fileName: string, type: string) {
   // Implement file saving logic here
-  return { id: '', name: fileName, url: '' };
+  // This is a mock implementation, replace with actual logic
+  return { id: 'newfile', name: fileName, url: 'https://example.com/files/' + fileName };
 }

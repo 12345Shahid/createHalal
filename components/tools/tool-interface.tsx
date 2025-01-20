@@ -1,6 +1,9 @@
 // File: /components/tools/tool-interface.tsx
 "use client"
 
+// /components/tools/tool-interface.tsx
+// Base tool interface component that provides the layout and structure for all tools
+
 import { useState } from "react"
 import { InputForm } from "./input-form"
 import { OutputDisplay } from "./output-display"
