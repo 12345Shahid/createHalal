@@ -107,7 +107,7 @@ Brief Description: Welcome to Create Halal!
 
 Discover an all-in-one platform built to help you create amazing content, boost your marketing, and streamline your programming tasks – all while staying true to Halal values.
 
-Whether you’re writing YouTube scripts, crafting blog posts, generating images, or exploring more tools, we’ve got you covered. Earn rewards through ads and referrals as you create, learn, and grow.
+Whether you're writing YouTube scripts, crafting blog posts, generating images, or exploring more tools, we've got you covered. Earn rewards through ads and referrals as you create, learn, and grow.
 
 Join us today and experience innovation that aligns with your beliefs!. 
 And that's the link of the logo image https://ibb.co.com/q7YRj3N
@@ -550,7 +550,7 @@ possible input fields so that the users can customize the content as the wishes 
 
 Dashboard 
 
-You can see there's a picture of an example of dashboard. In the example it has 4 sections.  the first section is Reviews. , the second section is Avg. Rating and the third section is investment analysis. And below these three sections there is another section called Total Visitors. But I don't want these. in my case the first section should be for showing the total credits my user has for generating content from the website. The second section should reveal or should show how many credits he got by referring the website to other peoples and the third section should show how many credits he got by watching ads ( actually the first one is the summation of these two I mean the summation of second and third section). In case I don't have any integration functionality with any ad system with my website ( at present ) so in that section,  keep it like “coming soon”. Finally the section below these three sections which is now called the total visitors It should be changed and it should be showing the recent activity ( activities of last 2 month. I mean a list of the content he generated in last 2 month using different tools from the website. ) of the user . It is like a history. And you can see in the image that the menu is at the left side but don't keep it there because in my website the menu should be always in the right side. Keep the color palette same as the homepage in case the color palette should be same across the whole website and the standard color palette is the color palette of homepage in this project.  Okay now the 4th section( which is below the 1st 3 sections and should represent the history and some other functionalities). as I want it to be replaced so the design to replace it 
+You can see there's a picture of an example of dashboard. In the example it has 4 sections.  the first section is Reviews. , the second section is Avg. Rating and the third section is investment analysis. And below these three sections there is another section called Total Visitors. But I don't want these. in my case the first section should be for showing the total credits my user has for generating content from the website. The second section should reveal or should show how many credits he got by referring the website to other peoples and the third section should show how many credits he got by watching ads ( actually the first one is the summation of these two I mean the summation of second and third section). In case I don't have any integration functionality with any ad system with my website ( at present ) so in that section,  keep it like "coming soon". Finally the section below these three sections which is now called the total visitors It should be changed and it should be showing the recent activity ( activities of last 2 month. I mean a list of the content he generated in last 2 month using different tools from the website. ) of the user . It is like a history. And you can see in the image that the menu is at the left side but don't keep it there because in my website the menu should be always in the right side. Keep the color palette same as the homepage in case the color palette should be same across the whole website and the standard color palette is the color palette of homepage in this project.  Okay now the 4th section( which is below the 1st 3 sections and should represent the history and some other functionalities). as I want it to be replaced so the design to replace it 
 
 
 
@@ -959,6 +959,23 @@ Description: Core components for tool interfaces
 Description: Blog tool implementations
 
 [ actually I don't have the file names for this batch but all the files which are not included into any other batches are inside this batch ]
+
+## Batch Files Overview
+
+Below is a comprehensive list of all files organized by batch. Each batch contains specific tools and components developed for the CreateHalal platform.
+
+### Batch 1
+- File 1: Description
+- File 2: Description
+// ... existing code ...
+
+### Batch 26
+- File 1: Description
+- File 2: Description
+
+// Add any additional descriptions or notes here to enhance understanding of the file structure and purpose.
+
+// ... existing code ...
 
 
 
