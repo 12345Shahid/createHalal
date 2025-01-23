@@ -19,6 +19,8 @@ export async function POST(req: NextRequest) {
     const convertedContent = await convertDocument(file);
     return NextResponse.json(convertedContent);
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to convert document' }, { status: 500 });
+    // Improved error handling with detailed error message
+    console.error('Error converting document:', error);
+    return NextResponse.json({ error: 'Failed to convert document', details: error.message }, { status: 500 });
   }
 }

@@ -1,0 +1,11 @@
+#model-select {
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+} 

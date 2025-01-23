@@ -1,17 +1,14 @@
-// /app/api/tools/writing/grammar-check/route.ts
-// API route for grammar checking
-
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
-      const { text } = req.body;
-      if (!text) {
-        return res.status(400).json({ error: 'Text is required' });
+      const { text, targetLanguage } = req.body;
+      if (!text || !targetLanguage) {
+        return res.status(400).json({ error: 'Text and target language are required' });
       }
-      // TODO: Implement grammar checking logic
-      res.status(200).json({ message: 'Grammar check completed.' });
+      // TODO: Implement translation logic
+      res.status(200).json({ message: 'Translation completed.' });
     } catch (error) {
       res.status(500).json({ error: 'Internal Server Error' });
     }

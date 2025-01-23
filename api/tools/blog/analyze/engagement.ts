@@ -18,6 +18,8 @@ export async function POST(req: NextRequest) {
     const analysis = await analyzeEngagement(content, target_audience);
     return NextResponse.json(analysis);
   } catch (error) {
+    // Improved error handling with detailed error message
+    console.error('Error analyzing engagement:', error);
     return NextResponse.json({ error: 'Failed to analyze engagement' }, { status: 500 });
   }
 }

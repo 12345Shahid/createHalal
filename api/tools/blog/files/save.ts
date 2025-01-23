@@ -24,6 +24,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ file: fileData });
   } catch (error) {
+    // Improved error handling
+    console.error('Error saving file:', error);
     return NextResponse.json(
       { error: 'Failed to save file' },
       { status: 500 }
