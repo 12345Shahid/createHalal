@@ -23,4 +23,6 @@ describe('PreferencesService', () => {
     const prefs = await PreferencesService.getUserPreferences(mockUserId);
     expect(prefs.theme).toBe('light');
   });
-}); 
+
+  // Add more test cases to cover different scenarios
+});
