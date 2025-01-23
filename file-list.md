@@ -960,23 +960,469 @@ Description: Blog tool implementations
 
 [ actually I don't have the file names for this batch but all the files which are not included into any other batches are inside this batch ]
 
-## Batch Files Overview
 
-Below is a comprehensive list of all files organized by batch. Each batch contains specific tools and components developed for the CreateHalal platform.
+**Batch 6: Writing Assistant Tools (Part 1)**
+```markdown
+1. components/tools/writing/grammar-checker.tsx
+2. components/tools/writing/sentence-rewriter.tsx
+3. components/tools/writing/creative-idea-generator.tsx
+4. components/tools/writing/context-improvement.tsx
+5. components/tools/writing/word-simplifier.tsx
+6. components/tools/writing/idea-suggestion.tsx
+7. components/tools/writing/tone-adjuster.tsx
+8. components/tools/writing/style-consistency.tsx
+9. components/tools/writing/advanced-grammar.tsx
+10. components/tools/writing/seo-keyword-inserter.tsx
+```
 
-### Batch 1
-- File 1: Description
-- File 2: Description
-// ... existing code ...
+**Batch 7: Writing Assistant Tools (Part 2)**
+```markdown
+1. components/tools/writing/document-polisher.tsx
+2. components/tools/writing/plagiarism-rewriter.tsx
+3. components/tools/writing/creative-prompt.tsx
+4. components/tools/writing/audience-voice.tsx
+5. components/tools/writing/content-expander.tsx
+6. components/tools/writing/paragraph-simplifier.tsx
+7. components/tools/writing/formal-converter.tsx
+8. components/tools/writing/emotion-enhancer.tsx
+9. components/tools/writing/fact-checker.tsx
+10. components/tools/writing/dialogue-generator.tsx
+```
 
-### Batch 26
-- File 1: Description
-- File 2: Description
-
-// Add any additional descriptions or notes here to enhance understanding of the file structure and purpose.
-
-// ... existing code ...
 
 
+
+
+**Batch 8: Writing Assistant Tools (Part 3)**
+```markdown
+1. components/tools/writing/citation-formatter.tsx
+2. components/tools/writing/vocabulary-enhancer.tsx
+3. components/tools/writing/transition-improver.tsx
+4. components/tools/writing/conclusion-generator.tsx
+5. components/tools/writing/introduction-creator.tsx
+6. components/tools/writing/outline-builder.tsx
+7. components/tools/writing/metaphor-generator.tsx
+8. components/tools/writing/headline-optimizer.tsx
+9. components/tools/writing/quote-finder.tsx
+10. components/tools/writing/summary-creator.tsx
+```
+
+**Batch 9: YouTube Tools (Part 1)**
+```markdown
+1. components/tools/youtube/title-generator.tsx
+2. components/tools/youtube/description-writer.tsx
+3. components/tools/youtube/tag-optimizer.tsx
+4. components/tools/youtube/thumbnail-designer.tsx
+5. components/tools/youtube/script-writer.tsx
+6. components/tools/youtube/hook-creator.tsx
+7. components/tools/youtube/end-screen-generator.tsx
+8. components/tools/youtube/caption-generator.tsx
+9. components/tools/youtube/keyword-researcher.tsx
+10. components/tools/youtube/engagement-analyzer.tsx
+```
+
+**Batch 10: YouTube Tools (Part 2)**
+```markdown
+1. components/tools/youtube/content-planner.tsx
+2. components/tools/youtube/trend-analyzer.tsx
+3. components/tools/youtube/competitor-research.tsx
+4. components/tools/youtube/analytics-interpreter.tsx
+5. components/tools/youtube/audience-insights.tsx
+6. components/tools/youtube/playlist-optimizer.tsx
+7. components/tools/youtube/collaboration-finder.tsx
+8. components/tools/youtube/monetization-advisor.tsx
+9. components/tools/youtube/channel-auditor.tsx
+10. components/tools/youtube/niche-finder.tsx
+```
+
+**Batch 11: API Routes (Part 1)**
+```markdown
+1. app/api/tools/writing/grammar-check/route.ts
+2. app/api/tools/writing/sentence-rewrite/route.ts
+3. app/api/tools/writing/idea-generation/route.ts
+4. app/api/tools/writing/context-improve/route.ts
+5. app/api/tools/writing/word-simplify/route.ts
+6. app/api/tools/writing/tone-adjust/route.ts
+7. app/api/tools/writing/style-check/route.ts
+8. app/api/tools/writing/seo-insert/route.ts
+9. app/api/tools/writing/plagiarism-check/route.ts
+10. app/api/tools/writing/content-expand/route.ts
+```
+
+**Batch 12: API Routes (Part 2)**
+```markdown
+1. app/api/tools/youtube/title-generate/route.ts
+2. app/api/tools/youtube/description-write/route.ts
+3. app/api/tools/youtube/tag-optimize/route.ts
+4. app/api/tools/youtube/thumbnail-design/route.ts
+5. app/api/tools/youtube/script-write/route.ts
+6. app/api/tools/youtube/hook-create/route.ts
+7. app/api/tools/youtube/caption-generate/route.ts
+8. app/api/tools/youtube/keyword-research/route.ts
+9. app/api/tools/youtube/engagement-analyze/route.ts
+10. app/api/tools/youtube/content-plan/route.ts
+```
+
+**Batch 13: Authentication Files**
+```markdown
+1. app/api/auth/signup/route.ts
+2. app/api/auth/login/route.ts
+3. app/api/auth/logout/route.ts
+4. app/api/auth/reset-password/route.ts
+5. components/auth/SignUpForm.tsx
+6. components/auth/LoginForm.tsx
+7. components/auth/ResetPasswordForm.tsx
+8. lib/auth/validation.ts
+9. lib/auth/session.ts
+10. hooks/useAuthentication.ts
+```
+
+**Batch 14: Testing Files (Part 1)**
+```markdown
+1. __tests__/components/tools/writing/grammar-checker.test.tsx
+2. __tests__/components/tools/writing/sentence-rewriter.test.tsx
+3. __tests__/components/tools/youtube/title-generator.test.tsx
+4. __tests__/components/tools/youtube/description-writer.test.tsx
+5. __tests__/components/auth/SignUpForm.test.tsx
+6. __tests__/components/auth/LoginForm.test.tsx
+7. __tests__/lib/auth/validation.test.ts
+8. __tests__/lib/auth/session.test.ts
+9. __tests__/hooks/useAuthentication.test.ts
+10. __tests__/hooks/useTool.test.ts
+```
+
+**Batch 15: Configuration Files**
+```markdown
+1. next.config.js
+2. tailwind.config.js
+3. jest.config.js
+4. .env.example
+5. tsconfig.json
+6. .eslintrc.json
+7. .prettierrc
+8. .gitignore
+9. package.json
+10. README.md
+```
+
+**Batch 16: Type Definitions (Part 1)**
+```markdown
+1. types/tools/writing.d.ts
+2. types/tools/youtube.d.ts
+3. types/tools/blog.d.ts
+4. types/auth.d.ts
+5. types/api.d.ts
+6. types/components.d.ts
+7. types/hooks.d.ts
+8. types/utils.d.ts
+9. types/config.d.ts
+10. types/common.d.ts
+
+
+
+
+
+
+**Batch 17: Writing Assistant Tool Components (Part 1)**
+```markdown
+1. components/tools/writing/grammar-checker/index.tsx
+2. components/tools/writing/sentence-rewriter/index.tsx
+3. components/tools/writing/creative-idea-generator/index.tsx
+4. components/tools/writing/context-improvement/index.tsx
+5. components/tools/writing/word-simplifier/index.tsx
+6. components/tools/writing/idea-suggestion/index.tsx
+7. components/tools/writing/tone-adjuster/index.tsx
+8. components/tools/writing/style-consistency/index.tsx
+9. components/tools/writing/advanced-grammar/index.tsx
+10. components/tools/writing/seo-keyword/index.tsx
+```
+
+**Batch 18: Writing Assistant Tool Components (Part 2)**
+```markdown
+1. components/tools/writing/document-polisher/index.tsx
+2. components/tools/writing/plagiarism-rewriter/index.tsx
+3. components/tools/writing/creative-prompt/index.tsx
+4. components/tools/writing/audience-voice/index.tsx
+5. components/tools/writing/content-expander/index.tsx
+6. components/tools/writing/paragraph-simplifier/index.tsx
+7. components/tools/writing/formal-converter/index.tsx
+8. components/tools/writing/emotion-enhancer/index.tsx
+9. components/tools/writing/fact-checker/index.tsx
+10. components/tools/writing/dialogue-generator/index.tsx
+```
+
+**Batch 19: YouTube Tool Components (Part 1)**
+```markdown
+1. components/tools/youtube/ai-scriptwriter/index.tsx
+2. components/tools/youtube/hook-creator/index.tsx
+3. components/tools/youtube/video-seo/index.tsx
+4. components/tools/youtube/description-generator/index.tsx
+5. components/tools/youtube/idea-finder/index.tsx
+6. components/tools/youtube/script-outline/index.tsx
+7. components/tools/youtube/title-tag/index.tsx
+8. components/tools/youtube/engagement-script/index.tsx
+9. components/tools/youtube/cta-generator/index.tsx
+10. components/tools/youtube/hashtag-finder/index.tsx
+```
+
+**Batch 20: API Routes for Writing Tools**
+```markdown
+1. app/api/tools/writing/grammar/route.ts
+2. app/api/tools/writing/sentence/route.ts
+3. app/api/tools/writing/ideas/route.ts
+4. app/api/tools/writing/context/route.ts
+5. app/api/tools/writing/simplify/route.ts
+6. app/api/tools/writing/tone/route.ts
+7. app/api/tools/writing/style/route.ts
+8. app/api/tools/writing/advanced/route.ts
+9. app/api/tools/writing/seo/route.ts
+10. app/api/tools/writing/document/route.ts
+```
+
+**Batch 21: API Routes for YouTube Tools**
+```markdown
+1. app/api/tools/youtube/script/route.ts
+2. app/api/tools/youtube/hook/route.ts
+3. app/api/tools/youtube/seo/route.ts
+4. app/api/tools/youtube/description/route.ts
+5. app/api/tools/youtube/ideas/route.ts
+6. app/api/tools/youtube/outline/route.ts
+7. app/api/tools/youtube/title/route.ts
+8. app/api/tools/youtube/engagement/route.ts
+9. app/api/tools/youtube/cta/route.ts
+10. app/api/tools/youtube/hashtags/route.ts
+```
+
+
+**Batch 22: Writing Assistant Tool Pages**
+```markdown
+1. app/tools/writing/grammar-checker/page.tsx
+2. app/tools/writing/sentence-rewriter/page.tsx
+3. app/tools/writing/creative-idea/page.tsx
+4. app/tools/writing/context-improvement/page.tsx
+5. app/tools/writing/word-simplifier/page.tsx
+6. app/tools/writing/idea-suggestion/page.tsx
+7. app/tools/writing/tone-adjuster/page.tsx
+8. app/tools/writing/style-consistency/page.tsx
+9. app/tools/writing/advanced-grammar/page.tsx
+10. app/tools/writing/seo-keyword/page.tsx
+```
+
+**Batch 23: Blog Tool Pages (Part 1)**
+```markdown
+1. app/tools/blog/quick-generator/page.tsx
+2. app/tools/blog/idea-generator/page.tsx
+3. app/tools/blog/outline-maker/page.tsx
+4. app/tools/blog/seo-helper/page.tsx
+5. app/tools/blog/grammar-check/page.tsx
+6. app/tools/blog/visual-content/page.tsx
+7. app/tools/blog/trending-topics/page.tsx
+8. app/tools/blog/keyword-planner/page.tsx
+9. app/tools/blog/headline-optimizer/page.tsx
+10. app/tools/blog/ai-writer/page.tsx
+```
+
+**Batch 24: Blog Tool Pages (Part 2)**
+```markdown
+1. app/tools/blog/content-optimizer/page.tsx
+2. app/tools/blog/plagiarism-check/page.tsx
+3. app/tools/blog/topic-suggestion/page.tsx
+4. app/tools/blog/sentence-enhance/page.tsx
+5. app/tools/blog/reader-outline/page.tsx
+6. app/tools/blog/focus-tracker/page.tsx
+7. app/tools/blog/research-collect/page.tsx
+8. app/tools/blog/idea-finder/page.tsx
+9. app/tools/blog/structure-gen/page.tsx
+10. app/tools/blog/engagement-analyze/page.tsx
+```
+
+**Batch 25: YouTube Tool Pages**
+```markdown
+1. app/tools/youtube/script-writer/page.tsx
+2. app/tools/youtube/hook-creator/page.tsx
+3. app/tools/youtube/seo-optimizer/page.tsx
+4. app/tools/youtube/description-gen/page.tsx
+5. app/tools/youtube/idea-finder/page.tsx
+6. app/tools/youtube/outline-maker/page.tsx
+7. app/tools/youtube/title-tags/page.tsx
+8. app/tools/youtube/engagement-script/page.tsx
+9. app/tools/youtube/cta-generator/page.tsx
+10. app/tools/youtube/hashtag-finder/page.tsx
+```
+
+**Batch 26: API Routes for Blog Tools**
+```markdown
+1. app/api/tools/blog/quick-generator/route.ts
+2. app/api/tools/blog/idea-generator/route.ts
+3. app/api/tools/blog/outline-maker/route.ts
+4. app/api/tools/blog/seo-helper/route.ts
+5. app/api/tools/blog/grammar-check/route.ts
+6. app/api/tools/blog/visual-content/route.ts
+7. app/api/tools/blog/trending-topics/route.ts
+8. app/api/tools/blog/keyword-planner/route.ts
+9. app/api/tools/blog/headline-optimizer/route.ts
+10. app/api/tools/blog/ai-writer/route.ts
+```
+
+
+
+**Batch 27: File Management System**
+```markdown
+1. components/file-management/FileExplorer.tsx
+2. components/file-management/FolderTree.tsx
+3. components/file-management/FileUploader.tsx
+4. components/file-management/FileViewer.tsx
+5. components/file-management/SearchFiles.tsx
+6. hooks/useFileSystem.ts
+7. lib/file-management/export.ts
+8. lib/file-management/search.ts
+9. types/file-system.d.ts
+10. utils/file-helpers.ts
+```
+
+**Batch 28: Credit System Implementation**
+```markdown
+1. components/credits/CreditBalance.tsx
+2. components/credits/ReferralSystem.tsx
+3. components/credits/CreditHistory.tsx
+4. components/credits/EarnCredits.tsx
+5. hooks/useCredits.ts
+6. lib/credits/calculations.ts
+7. lib/credits/referral.ts
+8. api/credits/balance/route.ts
+9. api/credits/earn/route.ts
+10. api/credits/history/route.ts
+```
+
+**Batch 29: Multi-language Support**
+```markdown
+1. components/language/LanguageSelector.tsx
+2. components/language/TranslatedContent.tsx
+3. hooks/useTranslation.ts
+4. lib/i18n/config.ts
+5. lib/i18n/translations.ts
+6. middleware/language.ts
+7. types/i18n.d.ts
+8. utils/language-detection.ts
+9. contexts/LanguageContext.tsx
+10. api/language/detect/route.ts
+```
+
+**Batch 30: Help Center & Documentation**
+```markdown
+1. app/help/page.tsx
+2. app/help/[category]/page.tsx
+3. app/help/[category]/[article]/page.tsx
+4. components/help/SearchDocs.tsx
+5. components/help/ArticleView.tsx
+6. components/help/CategoryList.tsx
+7. components/help/RelatedArticles.tsx
+8. lib/help/search.ts
+9. lib/help/articles.ts
+10. types/help-center.d.ts
+```
+
+**Batch 31: Notification System**
+```markdown
+1. components/notifications/NotificationCenter.tsx
+2. components/notifications/NotificationItem.tsx
+3. components/notifications/NotificationBell.tsx
+4. hooks/useNotifications.ts
+5. lib/notifications/fcm-config.ts
+6. lib/notifications/handlers.ts
+7. api/notifications/subscribe/route.ts
+8. api/notifications/unsubscribe/route.ts
+9. api/notifications/preferences/route.ts
+10. types/notifications.d.ts
+```
+
+
+
+**Batch 32: Testing Infrastructure**
+```markdown
+1. jest.setup.ts
+2. __tests__/components/tools/blog/quick-generator.test.tsx
+3. __tests__/components/tools/writing/grammar-checker.test.tsx
+4. __tests__/components/tools/youtube/script-writer.test.tsx
+5. __tests__/lib/api-client.test.ts
+6. __tests__/hooks/use-tool.test.ts
+7. __tests__/utils/validation.test.ts
+8. __tests__/utils/content-filter.test.ts
+9. __tests__/mocks/tool-responses.ts
+10. __tests__/test-utils.tsx
+```
+
+**Batch 33: API Integration**
+```markdown
+1. lib/api-client/tool-request.ts
+2. lib/api-client/response-handler.ts
+3. lib/api-client/error-handler.ts
+4. lib/api-client/rate-limiter.ts
+5. lib/api-client/cache-manager.ts
+6. lib/api-client/content-filter.ts
+7. lib/api-client/halal-validator.ts
+8. lib/api-client/token-manager.ts
+9. types/api-responses.d.ts
+10. types/api-requests.d.ts
+```
+
+**Batch 34: Export System**
+```markdown
+1. components/export/ExportButton.tsx
+2. components/export/FormatSelector.tsx
+3. components/export/ProgressIndicator.tsx
+4. lib/export/pdf-generator.ts
+5. lib/export/csv-generator.ts
+6. lib/export/ppt-generator.ts
+7. lib/export/file-saver.ts
+8. hooks/useExport.ts
+9. types/export.d.ts
+10. utils/export-helpers.ts
+```
+
+
+
+
+**Batch 35: Backend Integration**
+```markdown
+1. lib/api/flask-client.ts
+2. lib/api/g4f-integration.ts
+3. lib/api/content-filter.ts
+4. lib/api/halal-validator.ts
+5. lib/api/error-handler.ts
+6. lib/api/rate-limiter.ts
+7. types/api-responses.d.ts
+8. types/api-requests.d.ts
+9. hooks/useApi.ts
+10. utils/api-helpers.ts
+```
+
+**Batch 36: Security & Compliance**
+```markdown
+1. lib/security/content-validator.ts
+2. lib/security/data-protection.ts
+3. lib/security/halal-filter.ts
+4. lib/security/terms-enforcer.ts
+5. middleware/auth-check.ts
+6. middleware/content-filter.ts
+7. middleware/rate-limit.ts
+8. types/security.d.ts
+9. utils/security-helpers.ts
+10. hooks/useContentValidation.ts
+```
+
+**Batch 37: History & Analytics**
+```markdown
+1. components/history/HistoryViewer.tsx
+2. components/history/HistoryItem.tsx
+3. components/history/ExportHistory.tsx
+4. lib/history/storage.ts
+5. lib/history/analytics.ts
+6. hooks/useHistory.ts
+7. api/history/save/route.ts
+8. api/history/fetch/route.ts
+9. api/history/delete/route.ts
+10. types/history.d.ts
+```
 
 
