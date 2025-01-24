@@ -53,6 +53,9 @@ const tools = {
 { title: "Video to Blog Converter", description: "Convert video content into blogs", icon: "🎥" },
 { title: "Audio to Blog Converter", description: "Transform audio into readable blog content", icon: "🎙️" },
 { title: "Document to Blog Converter", description: "Turn documents into engaging blogs", icon: "📄" },
+{ title: "AI Programming Wizard", description: "Harness the power of AI for programming tasks", icon: "🤖" },
+{ title: "GPT-4 Turbo Insights", description: "Leverage GPT-4 Turbo for advanced content creation", icon: "⚡" },
+{ title: "GPT-4 Creative Suite", description: "Explore creative possibilities with GPT-4", icon: "🎨" }
   ],
   "Writing Assistant": [
     { title: "Grammar Checker", description: "Detect and correct grammar issues", icon: "📚" },

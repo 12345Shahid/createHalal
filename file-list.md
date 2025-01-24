@@ -112,9 +112,9 @@ Whether you're writing YouTube scripts, crafting blog posts, generating images, 
 Join us today and experience innovation that aligns with your beliefs!. 
 And that's the link of the logo image https://ibb.co.com/q7YRj3N
 
-One additional information is Create a powerful tools( The name can be something else but give something great with common vocabulary)  section I mean a section for showcasing the features available. Available features or the available tools are the three categories blog tools writing assistant tools, YouTube tools
+One additional information is Create a powerful tools( The name can be something else but give something great with common vocabulary)  section I mean a section for showcasing the features available. Available features or the available tools are the three categories blog tools writing assistant tools, YouTube tools , programming tools, GPT 4.0 and GPT 4.0 turbo
  
-And below these create a coming soon or upcoming section in that section only include these Image and social media tools, programming tools, video and audio tools, e-commerce and document tools. All the words in category names should be at uppercase. Like Blog Tools. These are for showing people that these are coming very soon and they should sign up to get access when they come. So the upper one is showing the existing features and the section below which is the coming soon or upcoming section will show the upcoming features and yes the color palette of the homepage should be absolutely same with the color palette of a website called Diprella and keep the same color palette across the whole website for consistency.
+And below these create a coming soon or upcoming section in that section only include these Image and social media tools,  video and audio tools, e-commerce and document tools. All the words in category names should be at uppercase. Like Blog Tools. These are for showing people that these are coming very soon and they should sign up to get access when they come. So the upper one is showing the existing features and the section below which is the coming soon or upcoming section will show the upcoming features and yes the color palette of the homepage should be absolutely same with the color palette of a website called Diprella and keep the same color palette across the whole website for consistency.
 
 
 
