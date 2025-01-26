@@ -86,7 +86,27 @@ async function bulkDeleteUserFiles(userId: string, query: string, type?: string)
 }
 
 import React from 'react';
-import NavigationMenu from '@/components/ui/navigation-menu';
+import Link from 'next/link';
+
+const NavigationMenu = () => {
+  return (
+    <nav>
+      <ul>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/tools/blog">Blog Tools</Link></li>
+        <li><Link href="/tools/writing-assistant">Writing Assistant Tools</Link></li>
+        <li><Link href="/tools/youtube">YouTube Tools</Link></li>
+        <li><Link href="/tools/programming">Programming Tools</Link></li>
+        <li><Link href="/tools/g4f-models">Powerful AI Models</Link></li>
+        <li><Link href="/pricing">Pricing</Link></li>
+      </ul>
+    </nav>
+  );
+};
+
+export default NavigationMenu;
+
+import React from 'react';
 import ThemeToggle from '@/components/ui/theme-toggle';
 
 const Header = () => {
@@ -99,6 +119,8 @@ const Header = () => {
 };
 
 export default Header;
+
+import React from 'react';
 
 const HomePage = () => {
   return (
@@ -280,8 +302,28 @@ export const deleteUserHistory = async (userId) => {
   // Delete user history logic
 };
 
-export const sendNotification = async (userId) => {
-  // Send notification logic
+export const sendNotification = async (userId, message) => {
+  const userDoc = doc(db, 'users', userId);
+  await setDoc(userDoc, { notifications: message }, { merge: true });
+
+  // Send notification using Firebase Cloud Messaging
+  const token = await getToken(messaging);
+  if (token) {
+    await fetch('https://fcm.googleapis.com/fcm/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `key=YOUR_SERVER_KEY`,
+      },
+      body: JSON.stringify({
+        to: token,
+        notification: {
+          title: 'Notification',
+          body: message,
+        },
+      }),
+    });
+  }
 };
 
 export const addCredits = async (userId) => {
@@ -379,4 +421,90 @@ export const generateProject = async (description) => {
       { name: 'script.js', content: 'console.log("Hello World");' },
     ],
   };
+};
+
+import React from 'react';
+import ProgrammingTools from '@/components/tools/programming-tools';
+
+const ProgrammingPage = () => {
+  return (
+    <div>
+      <ProgrammingTools />
+    </div>
+  );
+};
+
+export default ProgrammingPage;
+
+import React from 'react';
+import G4FModels from '@/components/tools/g4f-models';
+
+const G4FModelsPage = () => {
+  return (
+    <div>
+      <G4FModels />
+    </div>
+  );
+};
+
+export default G4FModelsPage;
+
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { sendNotification } from '@/lib/notifications';
+
+const auth = getAuth();
+const db = getFirestore();
+
+export const signUpUser = async (email, password) => {
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  const user = userCredential.user;
+
+  // Allocate 20 credits to new user
+  await setDoc(doc(db, 'users', user.uid), {
+    email: user.email,
+    credits: 20,
+  });
+
+  // Send notification to new user
+  await sendNotification(user.uid, 'Welcome! You have received 20 free credits.');
+
+  return user;
+};
+
+import { getMessaging, getToken, onMessage } from 'firebase/messaging';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
+
+const messaging = getMessaging();
+const db = getFirestore();
+
+export const sendNotification = async (userId, message) => {
+  const userDoc = doc(db, 'users', userId);
+  await setDoc(userDoc, { notifications: message }, { merge: true });
+
+  // Send notification using Firebase Cloud Messaging
+  const token = await getToken(messaging);
+  if (token) {
+    await fetch('https://fcm.googleapis.com/fcm/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `key=YOUR_SERVER_KEY`,
+      },
+      body: JSON.stringify({
+        to: token,
+        notification: {
+          title: 'Notification',
+          body: message,
+        },
+      }),
+    });
+  }
+};
+
+export const listenForNotifications = () => {
+  onMessage(messaging, (payload) => {
+    console.log('Message received. ', payload);
+    // Customize notification handling here
+  });
 };

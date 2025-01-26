@@ -1,6 +1,3 @@
-// /app/api/tools/writing/idea-generation/route.ts
-// API route for idea generation
-
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
