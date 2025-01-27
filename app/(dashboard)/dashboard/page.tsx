@@ -1,16 +1,17 @@
 // File: /app/(dashboard)/dashboard/page.tsx
 "use client"
 
-import { Container } from "@/components/ui/container"
-import { CreditsDisplay } from "@/components/dashboard/credits-display"
+import React from 'react';
+import Container from '@/components/ui/container';
+import ActivityLog from '@/components/dashboard/activity-log';
+import CreditsDisplay from '@/components/dashboard/credits-display';
 import { ReferralStats } from "@/components/dashboard/referral-stats"
 import { AdCredits } from "@/components/dashboard/ad-credits"
-import { ActivityLog } from "@/components/dashboard/activity-log"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { useAuth } from "@/hooks/use-auth"
 import { redirect } from "next/navigation"
 
-export default function DashboardPage() {
+const DashboardPage = () => {
   const { user, loading } = useAuth()
 
   if (loading) {
@@ -34,4 +35,6 @@ export default function DashboardPage() {
       <ActivityLog />
     </Container>
   )
-}
+};
+
+export default DashboardPage;

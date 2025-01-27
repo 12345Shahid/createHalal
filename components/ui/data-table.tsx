@@ -1,12 +1,8 @@
 // File: /components/ui/data-table.tsx
 "use client"
 
-import {
-  ColumnDef,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table"
+import React from 'react';
+import { useTable } from '@tanstack/react-table';
 
 import {
   Table,
@@ -22,21 +18,14 @@ interface DataTableProps<TData, TValue> {
   data: TData[]
 }
 
-export function DataTable<TData, TValue>({
-  columns,
-  data,
-}: DataTableProps<TData, TValue>) {
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  })
+const DataTable = ({ columns, data }) => {
+  const tableInstance = useTable({ columns, data });
 
   return (
     <div className="rounded-md border">
       <Table>
         <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
+          {tableInstance.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <TableHead key={header.id}>
@@ -52,8 +41,8 @@ export function DataTable<TData, TValue>({
           ))}
         </TableHeader>
         <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
+          {tableInstance.getRowModel().rows?.length ? (
+            tableInstance.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
@@ -74,3 +63,5 @@ export function DataTable<TData, TValue>({
     </div>
   )
 }
+
+export default DataTable;

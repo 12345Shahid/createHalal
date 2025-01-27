@@ -13,13 +13,14 @@ import { AuthForm } from "./auth-form"
 import { Button } from "../ui/button"
 import { Icons } from "../ui/icons"
 import { toast } from "sonner"
+import React from 'react';
 
 const formSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
 })
 
-export function LoginForm() {
+const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
   const form = useForm<z.infer<typeof formSchema>>({
@@ -56,43 +57,48 @@ export function LoginForm() {
   }
 
   return (
-    <div className="space-y-6">
-      <AuthForm
-        type="login"
-        onSubmit={form.handleSubmit(onSubmit)}
-        form={form}
-        isLoading={isLoading}
-      />
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
+    <form>
+      <Icons />
+      <div className="space-y-6">
+        <AuthForm
+          type="login"
+          onSubmit={form.handleSubmit(onSubmit)}
+          form={form}
+          isLoading={isLoading}
+        />
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-background px-2 text-muted-foreground">
+              Or continue with
+            </span>
+          </div>
         </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
-        </div>
+        <Button
+          variant="outline"
+          type="button"
+          onClick={handleGoogleSignIn}
+          disabled={isLoading}
+          className="w-full"
+        >
+          {isLoading ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.google className="mr-2 h-4 w-4" />
+          )}{" "}
+          Google
+        </Button>
+        <p className="text-center text-sm text-muted-foreground">
+          Don't have an account?{" "}
+          <Link href="/signup" className="text-primary hover:underline">
+            Sign up
+          </Link>
+        </p>
       </div>
-      <Button
-        variant="outline"
-        type="button"
-        onClick={handleGoogleSignIn}
-        disabled={isLoading}
-        className="w-full"
-      >
-        {isLoading ? (
-          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-        ) : (
-          <Icons.google className="mr-2 h-4 w-4" />
-        )}{" "}
-        Google
-      </Button>
-      <p className="text-center text-sm text-muted-foreground">
-        Don't have an account?{" "}
-        <Link href="/signup" className="text-primary hover:underline">
-          Sign up
-        </Link>
-      </p>
-    </div>
+    </form>
   )
 }
+
+export default LoginForm;
