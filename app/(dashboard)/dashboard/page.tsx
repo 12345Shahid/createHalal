@@ -5,21 +5,21 @@ import React from 'react';
 import Container from '@/components/ui/container';
 import ActivityLog from '@/components/dashboard/activity-log';
 import CreditsDisplay from '@/components/dashboard/credits-display';
-import { ReferralStats } from "@/components/dashboard/referral-stats"
-import { AdCredits } from "@/components/dashboard/ad-credits"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { useAuth } from "@/hooks/use-auth"
-import { redirect } from "next/navigation"
+import { ReferralStats } from "@/components/dashboard/referral-stats";
+import { AdCredits } from "@/components/dashboard/ad-credits";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { useAuth } from "@/hooks/use-auth";
+import { redirect } from "next/navigation";
 
 const DashboardPage = () => {
-  const { user, loading } = useAuth()
+  const { user, loading } = useAuth();
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   if (!user) {
-    redirect("/login")
+    redirect("/login");
   }
 
   return (
@@ -34,7 +34,7 @@ const DashboardPage = () => {
       </div>
       <ActivityLog />
     </Container>
-  )
+  );
 };
 
 export default DashboardPage;

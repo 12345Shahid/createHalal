@@ -25,7 +25,7 @@ interface AuthFormProps {
   isLoading?: boolean
 }
 
-export function AuthForm({ type, onSubmit, form, isLoading }: AuthFormProps) {
+const AuthForm = ({ type, onSubmit, form, isLoading }: AuthFormProps) => {
   const [email, setEmail] = useState("")
 
   if (type === "forgot-password") {
