@@ -31,6 +31,14 @@ const HomePage = () => {
         </ul>
         <p>Sign up now to get early access to these exciting new features!</p>
       </section>
+
+      {/* Conditionally render content based on environment variable */}
+      {process.env.NODE_ENV === 'development' && (
+        <section>
+          <h2>Developer Notes</h2>
+          <p>This section is only visible in the development environment.</p>
+        </section>
+      )}
     </div>
   );
 };
