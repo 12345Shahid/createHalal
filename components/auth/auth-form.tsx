@@ -16,6 +16,7 @@ import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import { Icons } from "../ui/icons"
 import { Label } from "../ui/label"
+import React from 'react';
 
 interface AuthFormProps {
   type: "login" | "signup" | "forgot-password"
@@ -62,6 +63,7 @@ export function AuthForm({ type, onSubmit, form, isLoading }: AuthFormProps) {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <Icons />
         <FormField
           control={form.control}
           name="email"
@@ -122,3 +124,5 @@ export function AuthForm({ type, onSubmit, form, isLoading }: AuthFormProps) {
     </Form>
   )
 }
+
+export default AuthForm;
