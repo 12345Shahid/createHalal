@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase-admin/firestore';
 
 if (!getApps().length) {
   if (!process.env.FIREBASE_PRIVATE_KEY) {
-    throw new Error('Firebase private key is missing');
+    throw new Error('The FIREBASE_PRIVATE_KEY environment variable is not set.');
   }
 
   initializeApp({
@@ -16,5 +16,7 @@ if (!getApps().length) {
   });
 }
 
-export const auth = getAuth();
-export const db = getFirestore(); 
+const auth = getAuth();
+const db = getFirestore();
+
+export { auth, db };
