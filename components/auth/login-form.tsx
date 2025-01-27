@@ -11,9 +11,9 @@ import { auth } from "@/lib/auth"
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import { AuthForm } from "./auth-form"
 import { Button } from "../ui/button"
-import { Icons } from "../ui/icons"
 import { toast } from "sonner"
 import React from 'react';
+import Icons from '@/components/ui/icons';
 
 const formSchema = z.object({
   email: z.string().email(),

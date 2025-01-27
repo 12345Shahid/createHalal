@@ -1,22 +1,19 @@
 // File: /app/layout.tsx
-import { Inter } from 'next/font/google'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Header } from '@/components/layout/header'
-import { Footer } from '@/components/layout/footer'
-import '@/styles/globals.css'
+import React from 'react';
+import Header from '@/components/ui/header';
+import Footer from '@/components/ui/footer';
+import { ThemeProvider } from 'next-themes';
+import { Inter } from 'next/font/google';
+import '@/styles/globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'CreateHalal - AI Content Creation Tools',
+  title: 'Your Ultimate Productivity Hub',
   description: 'Create amazing halal content for blogs, YouTube, and more with AI assistance.',
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
@@ -27,7 +24,7 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
 
 // File: /app/page.tsx
