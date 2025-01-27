@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useAdmin } from '@/hooks/use-admin';
 
-export function Statistics() {
-  const [stats, setStats] = useState({ totalUsers: 0, activeUsers: 0 });
-
-  useEffect(() => {
-    // Fetch statistics from API
-    const fetchStatistics = async () => {
-      const response = await fetch('/api/admin/getStatistics');
-      const data = await response.json();
-      setStats(data);
-    };
-    fetchStatistics();
-  }, []);
+const Statistics = () => {
+  const { stats } = useAdmin();
 
   return (
     <div>
       <h2>Statistics</h2>
-      <p>Total Users: {stats.totalUsers}</p>
-      <p>Active Users: {stats.activeUsers}</p>
+      <ul>
+        <li>Total Users: {stats.totalUsers}</li>
+        <li>Active Users (Daily): {stats.activeUsersDaily}</li>
+        <li>Active Users (Weekly): {stats.activeUsersWeekly}</li>
+        <li>Active Users (Monthly): {stats.activeUsersMonthly}</li>
+        <li>Total Generated Content: {stats.totalGeneratedContent}</li>
+        <li>Most Used Models: {stats.mostUsedModels}</li>
+        <li>Average Response Times: {stats.averageResponseTimes}</li>
+        <li>Total Blocked Users: {stats.totalBlockedUsers}</li>
+        <li>Total Credits Assigned: {stats.totalCreditsAssigned}</li>
+      </ul>
     </div>
   );
-} 
+};
+
+export default Statistics;
