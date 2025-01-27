@@ -14,9 +14,9 @@ import {
 } from "../ui/form"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
-import { Icons } from "../ui/icons"
 import { Label } from "../ui/label"
 import React from 'react';
+import Icons from '@/components/ui/icons';
 
 interface AuthFormProps {
   type: "login" | "signup" | "forgot-password"
