@@ -1,9 +1,9 @@
 // File: /components/auth/auth-form.tsx
-"use client"
+"use client";
 
-import { UseFormReturn } from "react-hook-form"
-import { useState } from "react"
-import Link from "next/link"
+import { UseFormReturn } from 'react-hook-form';
+import { useState } from 'react';
+import Link from 'next/link';
 import {
   Form,
   FormControl,
@@ -11,30 +11,31 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form"
-import { Input } from "../ui/input"
-import { Button } from "../ui/button"
-import { Label } from "../ui/label"
+} from '../ui/form';
+import { Input } from '../ui/input';
+import { Button } from '../ui/button';
+import { Label } from '../ui/label';
 import React from 'react';
 import Icons from '@/components/ui/icons';
 
 interface AuthFormProps {
-  type: "login" | "signup" | "forgot-password"
-  onSubmit: (values: any) => Promise<void>
-  form?: UseFormReturn<any>
-  isLoading?: boolean
+  type: 'login' | 'signup' | 'forgot-password';
+  onSubmit: (values: any) => Promise<void>;
+  form?: UseFormReturn<any>;
+  isLoading?: boolean;
 }
 
 const AuthForm = ({ type, onSubmit, form, isLoading }: AuthFormProps) => {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState('');
 
-  if (type === "forgot-password") {
+  if (type === 'forgot-password') {
     return (
-      <form onSubmit={(e) => {
-        e.preventDefault()
-        onSubmit(email)
-      }} 
-      className="space-y-4"
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit(email);
+        }}
+        className="space-y-4"
       >
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
@@ -51,18 +52,16 @@ const AuthForm = ({ type, onSubmit, form, isLoading }: AuthFormProps) => {
           />
         </div>
         <Button disabled={isLoading} type="submit" className="w-full">
-          {isLoading && (
-            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-          )}
+          {isLoading && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}
           Send reset link
         </Button>
       </form>
-    )
+    );
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form?.handleSubmit(onSubmit)} className="space-y-4">
         <Icons />
         <FormField
           control={form.control}
@@ -104,25 +103,20 @@ const AuthForm = ({ type, onSubmit, form, isLoading }: AuthFormProps) => {
             </FormItem>
           )}
         />
-        {type === "login" && (
+        {type === 'login' && (
           <div className="flex items-center justify-end">
-            <Link
-              href="/forgot-password"
-              className="text-sm text-primary hover:underline"
-            >
+            <Link href="/forgot-password" className="text-sm text-primary hover:underline">
               Forgot password?
             </Link>
           </div>
         )}
         <Button disabled={isLoading} type="submit" className="w-full">
-          {isLoading && (
-            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-          )}
-          {type === "login" ? "Sign in" : "Sign up"}
+          {isLoading && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}
+          {type === 'login' ? 'Sign in' : 'Sign up'}
         </Button>
       </form>
     </Form>
-  )
-}
+  );
+};
 
 export default AuthForm;
