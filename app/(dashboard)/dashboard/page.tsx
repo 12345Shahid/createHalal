@@ -1,15 +1,15 @@
 // File: /app/(dashboard)/dashboard/page.tsx
-"use client"
+"use client";
 
 import React from 'react';
 import Container from '@/components/ui/container';
 import ActivityLog from '@/components/dashboard/activity-log';
 import CreditsDisplay from '@/components/dashboard/credits-display';
-import { ReferralStats } from "@/components/dashboard/referral-stats";
-import { AdCredits } from "@/components/dashboard/ad-credits";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { useAuth } from "@/hooks/use-auth";
-import { redirect } from "next/navigation";
+import { ReferralStats } from '@/components/dashboard/referral-stats';
+import { AdCredits } from '@/components/dashboard/ad-credits';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { useAuth } from '@/hooks/use-auth';
+import { redirect } from 'next/navigation';
 
 const DashboardPage = () => {
   const { user, loading } = useAuth();
@@ -19,7 +19,8 @@ const DashboardPage = () => {
   }
 
   if (!user) {
-    redirect("/login");
+    redirect('/login');
+    return null;
   }
 
   return (
